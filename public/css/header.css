@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: rgb(17, 34, 85);
+}
+
+ul{
+    list-style: none;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.main-header{
+    display: flex;   
+    align-items: center;
+    justify-content: space-between;
+    /* height: 60px; */
+    padding: 20px 0;
+    font-size: 13px;
+}
+
+.main-header .brand-name{
+    font-size: 25px;
+    color: white;
+}
+
+.main-header .brand-name .brand-color{
+    color: red;
+}
+
+.main-header .nav-links ul {
+    color: white;
+    display: flex;
+    font-size: 20px;
+}
+
+.main-header .nav-links ul li {    
+    padding: 0 10px;      
+}
+
+.search-movie{
+    flex: 1;
+    margin-left: 20px ;
+    position: relative;
+}
+
+.search-movie input{
+    width: 50%;
+    border: 3px solid #ffffff;
+    border-radius: 50px;
+    padding: 5px 15px 5px 30px;
+    outline: none;    
+}
+
+.search-movie .search-img{
+    color: red;
+    top: 8px;
+    left: 8px;
+    position: absolute;
+}
