@@ -4,16 +4,18 @@
     box-sizing: border-box;
 }
 header{
-    background-color: rgb(17, 34, 85);
+    background-color: rgb(17, 34, 85);    
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 }
 
 ul{
     list-style: none;
 }
 
-a {
-  color: #ffffff;
-  text-decoration: none;
+a{
+    text-decoration: none;
 }
 
 .container {
@@ -25,9 +27,9 @@ a {
     display: flex;   
     align-items: center;
     justify-content: space-between;
-    /* height: 60px; */
+    height: 70px;
     padding: 20px 0;
-    font-size: 13px;
+    font-size: 13px;    
 }
 
 .main-header .brand-name{
@@ -37,6 +39,7 @@ a {
 
 .main-header .brand-name .brand-color{
     color: red;
+    font-weight: bold;
 }
 
 .main-header .nav-links ul {
@@ -69,3 +72,40 @@ a {
     left: 8px;
     position: absolute;
 }
+
+/* DropDown */
+.dropbtn {
+    background-color: rgb(17, 34, 85);
+    padding: 16px;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #d1cfcf}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  

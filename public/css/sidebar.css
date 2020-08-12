@@ -1,0 +1,29 @@
+.sidenav{
+    background-color: rgb(17, 34, 85);
+    width: 273px;
+    opacity: 0.8;    
+    height: 100%;
+    position: fixed;
+    top: 0px
+}
+
+.side-links{    
+    position: absolute;
+    top : 70px;
+    width: 100%;
+    line-height: 4em;
+    font-size: 20px;
+}
+
+
+.side-links ul li{    
+    text-align: center;
+    color: white;
+}
+.side-links ul li:hover{    
+    background-color: red;
+}
+
+.right-container{
+    margin-left: 280px;
+}

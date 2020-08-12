@@ -22,6 +22,12 @@ app.get('', (req, res) => {
     res.render('index')
 })
 
+app.get('*', (req,res) => {
+    res.render('404', {
+        errorMessage: 'Page not found',
+    })
+})
+
 app.listen(3000,()=> {
     console.log('Server is up on port 3000.')
 })
