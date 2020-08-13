@@ -1,0 +1,114 @@
+body{
+    background-image: linear-gradient(to right bottom, #12a0f3, #0a597e);
+}
+
+#loginbox{ 
+    position: relative;
+    height: 400px;
+    background: rgb(255, 255, 255);
+    width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    top: 100px;
+    left: 25%;
+
+}
+
+.leftbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+}
+
+h1{
+    margin: 0 0 20px 0;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.a{
+    border-top: 2px solid white;
+   line-height: 150%;
+   text-align: center;
+   text-decoration: none;
+   
+}
+
+input[type="email"]
+{
+    display:block ;
+    box-sizing: border-box;
+    margin-bottom: 28px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+input[type="password"]
+{
+    display:block ;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+button[type="submit"]
+{   
+    margin-top: 10px;
+    margin-bottom: 28px;
+    width: 120px;
+    align-content: center;
+    height: 32px;
+    background: #f44336;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus
+{
+    background: #ff5722;
+    transition: 0.2s ease;
+}
+.btn{
+    border-top: 10px solid white;
+   line-height: 150%;
+   text-align: center;
+   text-decoration: none;
+}
+
+.rightbox{
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+    background-image: url(../img/signin.jpg);
+}
+
+
