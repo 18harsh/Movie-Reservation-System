@@ -1,0 +1,122 @@
+body{
+    background-image: linear-gradient(to right bottom, #12a0f3, #0a597e);
+}
+
+#loginbox{ 
+    position: relative;
+    height: 450px;
+    background: rgb(255, 255, 255);
+    width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    top: 100px;
+    left: 25%;
+
+}
+
+#Fname,
+#Lname
+{
+    display:block ;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+input[type="email"]
+{
+    display:block ;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+input[type="password"]
+{
+    display:block ;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.leftbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 450px;
+}
+
+h1{
+    margin: 0 0 20px 0;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.rightbox{
+    position: absolute;
+    top: 0;
+    right: -10px;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 450px;
+    background-image: url(../img/signup.png);
+}
+
+button.btn{
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 6px 16px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    align-self: center;
+}
+
+button.btn a{
+    text-decoration: none;
+}
+
+button.btn a:hover{
+    text-decoration: underline;
+}
+
+button.block{
+    width: 100%;
+}
+
+button.secondary{
+    background-color: turquoise;
+    color: white;
+    margin-bottom: 15px;
+}

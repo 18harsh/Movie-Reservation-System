@@ -70,7 +70,7 @@ input[type="password"]
     transition: 0.2s ease;
 }
 
-button[type="submit"]
+input[type="submit"]
 {   
     margin-top: 10px;
     margin-bottom: 28px;
@@ -101,14 +101,13 @@ button[type="submit"]:focus
 }
 
 .rightbox{
-    position: absolute;
+    background-image: url(../img/signin.jpg);
+    position: relative;
     top: 0;
+    left: 300px;
     right: 0;
-    box-sizing: border-box;
-    padding: 40px;
     width: 300px;
     height: 400px;
-    background-image: url(../img/signin.jpg);
 }
 
 

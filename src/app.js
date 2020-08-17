@@ -19,16 +19,30 @@ app.use(express.static(publicDirectionPath))
 
 
 app.get('', (req, res) => {
-    res.render('index')
+    res.render('index',{
+        direct: "login",
+        directname: "Sign In"
+    })
 })
 
 app.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login',{
+        direct: "signup",
+        directname: "Sign Up"
+    })
+})
+
+app.get('/signup', (req, res) => {
+    res.render('signup',{
+        direct: "login",
+        directname: "Sign In"
+    })
 })
 
 app.get('*', (req,res) => {
-    res.render('404', {
-        errorMessage: 'Page not found',
+    res.render('404',{
+        direct: "login",
+        directname: "Sign In"
     })
 })
 
