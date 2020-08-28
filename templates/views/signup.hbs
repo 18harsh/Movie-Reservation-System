@@ -17,13 +17,15 @@
          </div>   
          <div class="leftbox">
              <h1 style="text-align: center;">Create an Account!</h1>
-             <form action="/">
-                 <input type="text" name="Fname" id="Fname" placeholder="First Name">
-                 <input type="text" name="Lname" id="Lname" placeholder="Last Name">
-                 <input type="email" name="Email" id="Email" placeholder="Email Address">
-                 <input type="password" name="Password" id="Password" placeholder="Password">
-                 <input type="password" name="RePassword" id="RePassword" placeholder="Repeat Password"><br>
-                 <button class="btn secondary block" >
+             <div class="message-{{status}}">
+             </div>
+             <form action="/signup" class="register" method="POST">
+                 <input type="text" name="Fname" id="Fname" placeholder="First Name" required>
+                 <input type="text" name="Lname" id="Lname" placeholder="Last Name" required>
+                 <input type="email" name="Email" id="Email" placeholder="Email Address" required>
+                 <input type="password" name="Password" id="Password" placeholder="Password" required minlength="8" maxlength="15" autocomplete >
+                 <input type="password" name="RePassword" id="RePassword" placeholder="Repeat Password" required minlength="8" maxlength="15" autocomplete ><br>
+                 <button class="btn secondary block">
                     <a> Register Account</a>
                 </button>
                  <div style="text-align: center;" >
@@ -33,7 +35,8 @@
                     <a href="#">Register with Facebook</a>
                 </div> --}}
              </form>
-
          </div>
+         {{!-- <script src="/js/base.js"></script> --}}
+         <script src="/js/signup.js"></script>
 </body>
 </html>

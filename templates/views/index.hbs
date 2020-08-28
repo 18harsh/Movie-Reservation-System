@@ -125,11 +125,13 @@
                 </div>                
             </div>
         </section>
-      
-      
-     
-      
-       
     </div>
+    <div class="message-{{status}}"></div>
+    <script>
+        if (document.querySelector('.message-success')) {
+            alert("Data store successfully!")
+        }
+    </script>
+    {{!-- <script src="/js/home.js"></script> --}}
 </body>
 </html>

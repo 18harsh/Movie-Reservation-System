@@ -1,45 +1,38 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
-const bcrypt = require('bcryptjs')
 
-const userSchema = new mongoose.Schema({
-    firstname: {
+const User = mongoose.model('User', {
+    Fname: {
         type: String,
         required: true,
         trim: true
     },
-    lastname: {
+    Lname: {
         type: String,
         required: true,
         trim: true
     },
-    email: {
+    Email: {
         type: String,
         required: true,
-        unique: true,
-        trim: true,
         lowercase: true,
+        unique: true,
         validate(value) {
             if (!validator.isEmail(value)) {
-               throw new Error('Email is invalid')
-           }
-       }
+                throw new Error('Email is invalid')
+            }
+        }
     },
-    password: {
+    Password: {
         type: String,
         required: true,
-        minlength: 7,
-        trim: true,
+        minlength: 8,
         validate(value) {
             if (value.toLowerCase().includes('password')) {
-                throw new Error('Password cannot contain "password"')
+                throw new Error('Password cannot contain password or name')
             }
         }
     }
 })
-
-
-
-const User = mongoose.model('User', userSchema)
 
 module.exports = User
