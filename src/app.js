@@ -1,13 +1,28 @@
+// /Users/harsh/mongodb/bin/mongod.exe --dbpath=/Users/harsh/mongodb-data
 const express = require('express')
+require('./db/mongoose')
 const path = require('path')
 const hbs = require('hbs')
 const bodyParser = require("body-parser")
-var session = require('express-session')
+var expressSession = require('express-session');
+// Image
+// const multer = require('multer')
+// const upload = multer({
+//     dest: 'images'
+// })
 
-require('./db/mongoose')
+
+// Routers
+const userRouter = require('./routers/user')
+
+// Models
 const User = require('./models/user')
+const Movies = require('./models/movies')
 
+// App
 const app = express()
+app.use(express.json())
+const port = process.env.PORT
 
 // Define paths for Express config
 const publicDirectionPath = path.join(__dirname, '../public')
@@ -22,71 +37,64 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(publicDirectionPath))
-app.use(express.json())
-
-app.use(require("express-session")({ 
-	secret: "harsh", 
-	resave: false, 
-	saveUninitialized: false
-})); 
 
 
-app.get('', (req, res) => {
-    res.render('index',{
-        direct: "login",
-        directname: "Sign In",
-        status: 'none'
+// express session
+app.use(expressSession({secret: 'max', saveUninitialized: false, resave: false}));
+
+// Router connection
+app.use(userRouter)
+
+app.get('/', async (req, res) => {
+    req.session.loginpage = false
+    const movies = await Movies.find({}).limit(4)
+
+    console.log(typeof movies)
+    res.render('index', {
+        userdata: req.session.user,
+        loginsuccess: req.session.successlogin,
+        loginpage: req.session.loginpage,
+        error: req.session.error,
+        movies
     })
 })
 
-app.get('/login', (req, res) => {
-    res.render('login',{
-        direct: "signup",
-        directname: "Sign Up"
+app.get('/offer', (req, res) => {
+    res.render('offer',{
+        loginsuccess: req.session.successlogin,
+        loginpage: req.session.loginpage,
+        error: req.session.error
     })
 })
 
-app.get('/signup', (req, res) => {
-    
-    res.render('signup',{
-        direct: "login",
-        directname: "Sign In",
-        status: 'none'
+app.get('/faq', (req, res) => {
+    res.render('faq',{
+        loginsuccess: req.session.successlogin,
+        loginpage: req.session.loginpage,
+        error: req.session.error
     })
 })
-app.post('/signup', (req, res) => {
-    const data = {
-        Fname: req.body.Fname,
-        Lname: req.body.Lname,
-        Email: req.body.Email,
-        Password: req.body.Password
+
+app.post('/movies', async (req, res) => {
+    const movies = new Movies(req.body)
+    try {
+        await movies.save()
+        res.status(201).send({ movies })
+    } catch (e) {
+        res.status(400).send(e)
     }
-
-    const user = new User(data)
-    user.save().then(() => {
-        res.render('index',{
-            direct: "login",
-            directname: "",
-            status: 'success'
-        })
-    }).catch((e) => {
-        // res.send('<script>alert("There is some technical problem. Try again later!")</script>')
-        res.render('signup',{
-            direct: "login",
-            directname: "Sign In",
-            status: 'failed'
-        })
-        // res.alert("There is some technical problem. Try again later!")
-    })
 })
+
+// app.post('/upload', upload.single('upload'), (req, res) => {
+//     res.send()
+// })
 
 app.get('*', (req,res) => {
     res.render('404',{
-        direct: "login",
-        directname: "Sign In"
+      
     })
 })
 
-app.listen(3000,()=> {
-    console.log('Server is up on port 3000.')
+app.listen(port,()=> {
+    console.log('Server is up on port '+port+'.')
 })

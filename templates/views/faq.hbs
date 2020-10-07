@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/faq.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    <title>ApnaShow</title>
+    <title>ApnaShow</title>
+  
+</head>
+<body>
+    {{>header}}
+    {{>sidebar}}
+    {{!-- faq --}}
+    
+   
+	<div class="box">
+   <p class="heading">Frequently Asked Questions (FAQs)</p>
+   <div class="container">
+   <div class="faqs">
+      <details>
+         <summary>How do I register with Apnashow ?</summary>
+        <p class="text">Oh, that's easy as pie!
+Just go to our website or application and click on the Sign-in option. You can either sign up with a Google+, Facebook or the best option is the mobile number of your choice. And its done!</p>
+      </details>
+      <details>
+         <summary>Where do I find Coupons on Apnashow?</summary>
+         <p class="text">Coupons can be selected after a successful booking. You can select them using the link shared in your confirmation email. You can also find an option to add coupons under 'Purchase History'.</p>
+      </details>
+      <details>
+         <summary>What is the age limit for children to buy a ticket?</summary>
+         <p class="text">Below are the age criteria to buy a ticket. Just to keep you informed, for an "A" adult movie this will not be levied.
+
+Mumbai: Children aged 2 years and above will require a ticket for all cinemas in this region (Including KT Vision Vasai).    
+
+For all Carnival cinemas, children aged 3 years and above require a full ticket to watch a movie.</p>
+      </details>
+     <details>
+       <summary>Booked tickets for a movie but the show was cancelled. Please help!</summary>
+       <p class="text">Due to these trying times, it may take a maximum of 15 working days for the amount to reflect in your account. We are leaving no stone unturned to ensure the amount reaches you soon.</p>
+     </details>
+     <details>
+       <summary>How long is the Coupon valid?</summary>
+       <p class="text">The Coupons are valid from the date of the Movie till days specified for the brand campaign. 
+
+The Start date and Expiry date for the Coupon will be clearly displayed while picking up the coupon. 
+
+         You won’t be able to avail the coupon before and after the coupon validity.</p>
+     </details>
+     <details>
+       <summary>I'm experiencing difficulties while applying an offer and encounter the below error. Please help! </summary>
+       <p class="text">There is a limited allotment of discounted tickets available under offers with us. These offers on our portal are available to people all across the country. 
+There is a limited allotment of discounted tickets available under offers with us. These offers on our portal are available to people all across the country. </p>
+     </details>
+   </div>
+</div>
+<div class="d-flex justify-content-center mb-4">
+    
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="">
+          Email us
+      </button>
+    
+      <button type="button" class="btn btn-disabled ml-3">
+          Chat with us
+      </button>
+</div>
+</div>
+
+{{!-- Modal --}}
+{{# if loginsuccess }}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Email</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="https://formspree.io/meqpojbb" method="POST">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="recipient-name" name="name" value={{userdata.0.Fname}} readonly>
+          </div>
+          <div class="form-group">
+            <label for="recipient-email" class="col-form-label">Recipient:</label>
+            <input type="email" class="form-control" id="recipient-email" name="_replyto" value={{userdata.0.Email}} readonly>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text" name="message" style="height: 50px;" placeholder="Type you'r problem and we will reply you soon."></textarea>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" value="Send">
+        </div>
+      </form> 
+      </div>
+      
+    </div>
+  </div>
+</div>
+{{ else }}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-danger">Login required!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  onclick="window.location.href='/login'">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
+<script>
+  var textarea = document.querySelector('textarea');
+
+textarea.addEventListener('keydown', autosize);
+             
+function autosize(){
+  var el = this;
+  setTimeout(function(){
+    el.style.cssText = 'height:auto; padding:0';
+    // for box-sizing other than "content-box" use:
+    // el.style.cssText = '-moz-box-sizing:content-box';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+  },0);
+}
+</script>
+</body>
+</html>

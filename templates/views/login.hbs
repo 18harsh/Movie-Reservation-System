@@ -6,26 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
-    <title>ApnaShow-Login</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    <title>ApnaShow</title>
+    <title>ApnaShow</title>
 </head>
 <body>
     {{>header}}
-    <div id="loginbox">
+
+    {{!-- Login --}}
+   <div id="loginbox">
         <div class="rightbox">
             
         </div>
         <div class="leftbox">
-            <h1 style="text-align: center;">Welcome Back!</h1>
-            <form action="/">
+            <h4 style="text-align: center;">Welcome Back!</h1><br>
+            <form method="post">
             <input type="email" name="Email" id="Email" placeholder="Enter Email">
             <input type="password" name="Password" id="Password" placeholder="Enter Password" autocomplete ><br>
-            <input type="checkbox" name="Remember" id="Remember" checked>&nbsp; Remember me!<br>
-            <div class="btn"><input type="submit" id="submit"></div>
-            <div class="a"><a href="#">Forgot Password?</a></div>
-            <div class="a"><a href="/signup" >Create Account!</a></div>
+            <input type="checkbox" name="Remember" id="Remember" checked>&nbsp; Remember me!<br><br>
+            <button class="loginbtn secondary block"> <a> Log In</a> </button>
+            <div style="text-align: center;" ><a href="/login"> Forgot Password?</a></div><br> 
+            <div style="text-align: center;" ><a href="/signup"> Create Account</a></div><br>
             </form>
+        </div>
     </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
 </body>
 </html>

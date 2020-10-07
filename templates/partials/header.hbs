@@ -1,32 +1,58 @@
-<header>
-        <nav>
-            <div class="container menu-bar">
-                <div class="main-header">
-                    <div class="brand-name"><a href="/"><span style="color: white;">Apna</span> <span class="brand-color">Show</span></a></div>
-                    <div class="search-movie">
-                        <div class="search-section">
-                            <span class="search-img"><i class="fa fa-search" aria-hidden="true"></i></span> 
-                            <p><input type="text" name="search-input" placeholder="Search your Movies here..."/></p>
-                        </div>
-                    </div>
-                    <div class="nav-links">
-                        <ul>
-                          <li><a href="/{{direct}}"><span style="color: white;">{{directname}}</span></a></li>
-                            {{!-- <li><i class="fa fa-bars" aria-hidden="true"></i></li> --}}
-                            <li>
-                                
-                                <div class="dropdown">
-                                    <a class="dropbtn"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                                    <div class="dropdown-content">
-                                        <a href="#">Profile</a>
-                                        <a href="#">Account</a>
-                                        <a href="#">Logout</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+  <a class="navbar-brand" style="font-weight:bold;" href="/">Apna <span style="color:red">Show</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="ml-auto d-md-inline-flex mr-md-5">
+    <form class="form-inline my-2 mr-md-3" action="/movies" method="GET">
+        <div class="input-group">
+            <input type="search" name="search" class="form-control"  aria-label="search" aria-describedby="basic-addon1" placeholder="Search movies...">
+            <div class="input-group-append">
+                <button class="input-group-text btn btn-outline-success" type="submit" id="basic-addon1">Search</button>
             </div>
-        </nav>
-    </header>
+        </div>
+    </form>
+    {{!-- </div> --}}
+    <ul class="navbar-nav mt-2">
+      {{# if loginsuccess }}
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
+                <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+            </svg>
+        </a>
+      </li>
+      <li class="nav-item dropdown mr-md-5">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{userdata.0.Fname}}
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+            </svg>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#">Orders</a>
+          <a class="dropdown-item" href="#">Account Settings</a>
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </div>
+      </li>
+      {{ else }}
+        {{# if loginpage }}
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/signup">Sign Up <span class="sr-only">(current)</span></a>
+        </li>
+        {{ else }}
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/login">Sign In <span class="sr-only">(current)</span></a>
+        </li>
+        {{/if}}
+      {{/if}}
+    </ul>
+    </div>
+  </div>
+</nav>

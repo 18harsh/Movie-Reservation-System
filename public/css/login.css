@@ -14,6 +14,7 @@ body{
 }
 
 .leftbox{
+    
     position: absolute;
     top: 0;
     left: 0;
@@ -30,11 +31,10 @@ h1{
 }
 
 .a{
-    border-top: 2px solid white;
+   
    line-height: 150%;
    text-align: center;
    text-decoration: none;
-   
 }
 
 input[type="email"]
@@ -87,27 +87,45 @@ input[type="submit"]
     cursor: pointer;
 }
 
-button[type="submit"]:hover,
-button[type="submit"]:focus
-{
-    background: #ff5722;
-    transition: 0.2s ease;
-}
-.btn{
-    border-top: 10px solid white;
-   line-height: 150%;
-   text-align: center;
-   text-decoration: none;
+button.loginbtn{
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 6px 16px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    align-self: center;
 }
 
+button.loginbtn a{
+    text-decoration: none;
+}
+
+button.loginbtn a:hover{
+    text-decoration: underline;
+}
+
+button.block{
+    width: 100%;
+}
+
+button.secondary{
+    background-color: turquoise;
+    color: white;
+    margin-bottom: 15px;
+}
+
+
 .rightbox{
-    background-image: url(../img/signin.jpg);
-    position: relative;
+    position: absolute;
     top: 0;
-    left: 300px;
-    right: 0;
+    right: -10px;
+    box-sizing: border-box;
+    padding: 40px;
     width: 300px;
     height: 400px;
+    background-image: url(../img/login.png);
 }
 
 

@@ -13,6 +13,28 @@ body{
 
 }
 
+.leftbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 450px;
+}
+
+
+
+.a{
+   
+    line-height: 150%;
+    text-align: center;
+    text-decoration: none;
+    
+    
+ }
+ 
+
 #Fname,
 #Lname
 {
@@ -65,22 +87,6 @@ input[type="password"]
     transition: 0.2s ease;
 }
 
-.leftbox{
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    padding: 40px;
-    width: 300px;
-    height: 450px;
-}
-
-h1{
-    margin: 0 0 20px 0;
-    font-weight: 300;
-    font-size: 28px;
-}
-
 .rightbox{
     position: absolute;
     top: 0;
@@ -92,7 +98,7 @@ h1{
     background-image: url(../img/signup.png);
 }
 
-button.btn{
+button.registerbtn{
     display: block;
     font-size: 14px;
     line-height: 20px;
@@ -103,11 +109,11 @@ button.btn{
     align-self: center;
 }
 
-button.btn a{
+button.registerbtn a{
     text-decoration: none;
 }
 
-button.btn a:hover{
+button.registerbtn a:hover{
     text-decoration: underline;
 }
 
