@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Movie-Reservation-System">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/moviecard.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    <title>ApnaShow</title>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    {{>header}}
+    {{>sidebar}}
+    
+    
+    <div role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 mt-3">
+        <div class="row d-inline-flex">
+            <div class="col-md-9 col-6">
+                {{!-- Movies --}}
+                <div class="d-flex justify-content-start">
+                    <h3 class="Movie-type pt-3">Movies</h3>
+                </div>
+                <hr/>
+                
+                <div class="row justify-content-start">
+                
+                    {{#each movies}}
+                        <div class="d-flex col-auto mb-3 ">
+                            <a href="/{{this.movieName}}" style="text-decoration: none;">
+                            <div class="card" style="width: 15rem;">
+                                <div class="rating">
+                                    <i class="fa fa-heart red-heart" aria-hidden="true"></i> {{this.like}}%
+                                    <br>
+                                    {{this.review}}
+                                </div>
+                            <img src="img/{{this.movieName}}.jpg" class="card-img-top img-fluid" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.movieName}}</h5>
+                                <p class="card-text">{{this.language}} <span class="text-danger float-right">{{this.dateRelease}}</span></p>
+                            </div>
+                        </div>
+                        </a>
+                        </div>
+                    {{/each}}
+                    
+                </div>
+            </div>
+            {{!-- Filter --}}
+            <div class="col-md-3 col-5 ml-auto">
+                {{>filter}}
+            </div>
+        </div>
+    </div>
+
+    {{!-- SuccessLogin --}}
+    {{# if loginsuccess}}
+       <div class="modal" tabindex="-1" role="dialog" id="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Thank you for coming back</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-success">Successfully logged in!</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{{/if}}
+    {{!-- <script src="/js/home.js"></script> --}}
+    
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
+<script data-ad-client="ca-pub-7034219663964995" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#modal").modal('show');
+    });
+
+</script>
+</body>
+</html>

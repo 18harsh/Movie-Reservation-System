@@ -48,8 +48,6 @@ app.use(userRouter)
 app.get('/', async (req, res) => {
     req.session.loginpage = false
     const movies = await Movies.find({}).limit(4)
-
-    console.log(typeof movies)
     res.render('index', {
         userdata: req.session.user,
         loginsuccess: req.session.successlogin,
@@ -72,6 +70,17 @@ app.get('/faq', (req, res) => {
         loginsuccess: req.session.successlogin,
         loginpage: req.session.loginpage,
         error: req.session.error
+    })
+})
+
+app.get('/movies', async (req, res) => {
+    req.session.loginpage = false
+    const movies = await Movies.find({})
+    res.render('movies',{
+        loginsuccess: req.session.successlogin,
+        loginpage: req.session.loginpage,
+        error: req.session.error,
+        movies
     })
 })
 
