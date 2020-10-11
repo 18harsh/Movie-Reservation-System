@@ -1,47 +1,47 @@
-<div class="card card-body" >
+<div class="card card-body position-fixed">
     <h3>Filter By</h3>
     <form method="GET" action="/movies">
     <div>
         <h5 class="pt-3" data-toggle="collapse" data-target="#genre">Genre <i class="fas fa-arrow-down"></i></h5>
         <div id="genre" class="collapse show">
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Horror" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Horror</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Action" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Action</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Drama" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Drama</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Science Fiction" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Science Fiction</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Science Comedy" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Science Comedy</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Animation" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Animation</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Thriller" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Thriller</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Western" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Western</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Romance" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Romance</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="Mystery" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Mystery</label>
             </div>
         </div>
@@ -50,18 +50,28 @@
         <h5 class="pt-3" data-toggle="collapse" data-target="#language">Select Language <i class="fas fa-arrow-down"></i></h5>
         <div id="language" class="collapse show">
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">English</label>
+                <input type="checkbox" class="form-check-input" name="Hindi" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Hindi</label>
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Hindi</label>
+                <input type="checkbox" class="form-check-input" name="English" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">English</label>
             </div>
         </div>
     </div>
     <div class="btn-group d-flex justify-content-center">
             <button class="btn btn-success btn-sm" type="submit">Apply Filter</button>
-            <button class="btn btn-primary btn-sm ml-1" type="submit">Reset Filter</button>
+     </form>
+            <button class="btn btn-primary btn-sm ml-1" onclick="reset()">Reset Filter</button>
     </div>
-    </form>
+   
 </div>
+
+
+
+<script>
+function reset() {
+  document.getElementById("exampleCheck1").checked = false;
+}
+
+</script>

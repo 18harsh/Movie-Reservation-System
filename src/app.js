@@ -74,25 +74,37 @@ app.get('/faq', (req, res) => {
 })
 
 app.get('/movies', async (req, res) => {
+    const filter = Object.keys(req.query)
     req.session.loginpage = false
-    const movies = await Movies.find({})
-    res.render('movies',{
+    let movies 
+    if (filter.length <1) {
+        movies = await Movies.find({})
+    } else {
+        movies = await Movies.find({ genre: filter })
+        language = await Movies.find({ language: filter })
+        if (language.length > 0) {
+            movies = [...language]
+        }
+    }
+    
+    res.render('movies', {
         loginsuccess: req.session.successlogin,
         loginpage: req.session.loginpage,
         error: req.session.error,
-        movies
+        movies,
+        filter
     })
 })
 
-app.post('/movies', async (req, res) => {
-    const movies = new Movies(req.body)
-    try {
-        await movies.save()
-        res.status(201).send({ movies })
-    } catch (e) {
-        res.status(400).send(e)
-    }
-})
+// app.post('/movies', async (req, res) => {
+//     const movies = new Movies(req.body)
+//     try {
+//         await movies.save()
+//         res.status(201).send({ movies })
+//     } catch (e) {
+//         res.status(400).send(e)
+//     }
+// })
 
 // app.post('/upload', upload.single('upload'), (req, res) => {
 //     res.send()
