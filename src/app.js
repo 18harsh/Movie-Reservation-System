@@ -66,7 +66,8 @@ app.get('/offer', (req, res) => {
 })
 
 app.get('/faq', (req, res) => {
-    res.render('faq',{
+    res.render('faq', {
+        userdata: req.session.user,
         loginsuccess: req.session.successlogin,
         loginpage: req.session.loginpage,
         error: req.session.error
@@ -88,6 +89,7 @@ app.get('/movies', async (req, res) => {
     }
     
     res.render('movies', {
+        userdata: req.session.user,
         loginsuccess: req.session.successlogin,
         loginpage: req.session.loginpage,
         error: req.session.error,
