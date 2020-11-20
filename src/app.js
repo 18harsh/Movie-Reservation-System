@@ -2,9 +2,12 @@
 const express = require('express')
 require('./db/mongoose')
 const path = require('path')
+const http = require('http')
 const hbs = require('hbs')
+const socketio = require('socket.io')
 const bodyParser = require("body-parser")
 var expressSession = require('express-session');
+
 // Image
 // const multer = require('multer')
 // const upload = multer({
@@ -23,6 +26,11 @@ const Movies = require('./models/movies')
 const app = express()
 app.use(express.json())
 const port = process.env.PORT
+
+// create server
+const server = http.createServer(app)
+const io = socketio(server)
+
 
 // Define paths for Express config
 const publicDirectionPath = path.join(__dirname, '../public')
@@ -44,6 +52,10 @@ app.use(expressSession({secret: 'max', saveUninitialized: false, resave: false})
 
 // Router connection
 app.use(userRouter)
+
+
+
+// 
 
 app.get('/', async (req, res) => {
     req.session.loginpage = false
@@ -75,16 +87,21 @@ app.get('/faq', (req, res) => {
 })
 
 app.get('/movies', async (req, res) => {
-    const filter = Object.keys(req.query)
     req.session.loginpage = false
     let movies 
-    if (filter.length <1) {
-        movies = await Movies.find({})
-    } else {
-        movies = await Movies.find({ genre: filter })
-        language = await Movies.find({ language: filter })
-        if (language.length > 0) {
-            movies = [...language]
+    const filter = Object.keys(req.query)
+    if (Object.keys(req.query)[0] === "search") {
+        movies = await Movies.find({ movieName: Object.values(req.query) })
+    }else{
+        
+        if (filter.length <1) {
+            movies = await Movies.find({})
+        } else {
+            movies = await Movies.find({ genre: filter })
+            language = await Movies.find({ language: filter })
+            if (language.length > 0) {
+                movies = [...language]
+            }
         }
     }
     
@@ -96,6 +113,25 @@ app.get('/movies', async (req, res) => {
         movies,
         filter
     })
+})
+
+app.get('/movies/seats', async (req, res) => {
+    res.render('seats', {
+        userdata: req.session.user,
+        loginsuccess: req.session.successlogin,
+        loginpage: req.session.loginpage,
+        error: req.session.error
+    })
+})
+
+app.get('/movies/*', async (req, res) => {
+    try {
+        res.render('timing', {
+            
+        })
+    } catch (e) {
+        res.status(400).send(e)
+    }
 })
 
 // app.post('/movies', async (req, res) => {
@@ -112,12 +148,32 @@ app.get('/movies', async (req, res) => {
 //     res.send()
 // })
 
+
+app.get('/help', (req, res) => {
+    res.render('help',{
+        
+    })
+})
+
 app.get('*', (req,res) => {
     res.render('404',{
       
     })
 })
 
-app.listen(port,()=> {
-    console.log('Server is up on port '+port+'.')
+
+// app.listen(port,()=> {
+//     console.log('Server is up on port '+port+'.')
+// })
+
+
+let count = 0
+io.on('connection', (socket)=>{
+    console.log('New WebSocket connection')
+
+    socket.emit('countUpdated',count)
+})
+
+server.listen(port, () => {
+    console.log(`Server is up on port ${port}!`)
 })

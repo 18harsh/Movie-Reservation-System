@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    <title>ApnaShow</title>
+    <link rel="stylesheet" href="/css/styles.min.css">
+    <title>ApnaShow</title>
+</head>
+<style>
+    a{
+      text-decoration: none;
+    }
+</style>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+    {{>header}}
+    {{>sidebar}}
+    <div role="main" class="col-md-9 col-lg-10 px-md-4 mt-3">
+        
+        <div class="row d-inline-flex">
+
+          <div class="col-md-9 col-6" style="margin-left: 50%";>
+        {{!-- start --}}
+
+        <div>
+            <div class="d-flex flex-row text-white text-center">
+                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#home">
+                  <span class="d-none d-sm-block text-dark" id="firstday"></span>
+                </div>
+                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#resume">
+                  <span class="d-none d-sm-block text-dark"  id="secondday"></span>
+                </div>
+                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#work">
+                  <span class="d-none d-sm-block text-dark"  id="thirdday"></span>
+                </div>
+                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#contact">
+                  <span class="d-none d-sm-block text-dark"  id="fourthday"></span>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    <!-- Home -->
+    <div id="home" class="collapse show">
+       <div class="card card-body bg-secondary text-white py-5">
+          <h1>Screen 1</h1>
+          <hr style="height:2px;color:white;background-color:white">
+          <div class="text-center">
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">9:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">11:00</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">14:30</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">17:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">19:45</a></div>
+          </div>
+        </div>
+       
+      </div>
+
+      
+    <!-- Resume -->
+    <div id="resume" class="collapse">
+      <div class="card card-body bg-secondary text-white py-5">
+          <h1>Screen 1</h1>
+          <hr style="height:2px;color:white;background-color:white">
+          <div class="text-center">
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">9:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">11:00</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">14:30</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">17:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">19:45</a></div>
+          </div>
+        </div>
+    </div>
+    <!-- work -->
+    <div id="work" class="collapse">
+      <div class="card card-body bg-secondary text-white py-5">
+          <h1>Screen 1</h1>
+          <hr style="height:2px;color:white;background-color:white">
+          <div class="text-center">
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">9:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">11:00</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">14:30</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">17:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">19:45</a></div>
+          </div>
+        </div>
+      </div>
+  <!-- Contact -->
+    <div id="contact" class="collapse">
+      <div class="card card-body bg-secondary text-white py-5">
+          <h1>Screen 1</h1>
+          <hr style="height:2px;color:white;background-color:white">
+          <div class="text-center">
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">9:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">11:00</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">14:30</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">17:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">19:45</a></div>
+          </div>
+        </div>
+    </div>
+
+
+        {{!-- end --}}
+        </div>
+      </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
+<script>
+    $('.port-item').click(function(){
+      $('.collapse').collapse('hide');
+    });
+
+    function myDayFunction(num) {
+    var d = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    var n = weekday[d.getDay()+num];
+    return n
+    }
+
+    let d = new Date();
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+    var fday = currentDate.getDate()
+    var fmonth = currentDate.getMonth()
+
+    var sday = currentDate.getDate()+2
+    var smonth = currentDate.getMonth()
+    
+    var tday = currentDate.getDate()+3
+    var tmonth = currentDate.getMonth()
+
+    var frday = currentDate.getDate()+4
+    var frmonth = currentDate.getMonth()
+    
+    document.getElementById("firstday").innerHTML = "<b>" + fday + "<br>" + months[fmonth] + ",<br>" + myDayFunction(1) + "</b>"
+    document.getElementById("secondday").innerHTML = "<b>" + sday + "<br>" + months[smonth] + ",<br>" + myDayFunction(2) + "</b>"
+    document.getElementById("thirdday").innerHTML = "<b>" + tday + "<br>" + months[tmonth] + ",<br>" + myDayFunction(3) + "</b>"
+    document.getElementById("fourthday").innerHTML = "<b>" + frday + "<br>" + months[frmonth] + ",<br>" + myDayFunction(4) + "</b>"
+    </script>
+</body>
+</html>
