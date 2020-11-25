@@ -41,12 +41,28 @@
     {{>header}}
 
     <div class="movie-container">
-      <label>Select a movie</label>
+      <label>Selected Movies</label>
       <select id="movie">
-        <option value="10">Avengers Endgame ($10)</option>
-        <option value="12">Joker ($12)</option>
-        <option value="8">Toy Story 4 ($8)</option>
-        <option value="9">The Lion King ($9)</option>
+        <option value="140" aria-readonly="true" id="selectedMovieName">
+        </option>
+      </select>
+
+      <label>Selected Date</label>
+      <select id="movie">
+        <option aria-readonly="true" id="selectedMovieDate">
+          <script>
+            document.getElementById("selectedMovieDate").innerHTML = localStorage.getItem("movieDate");  
+          </script>
+        </option>
+      </select>
+
+      <label>Selected Time</label>
+      <select id="movie">
+        <option aria-readonly="true" id="selectedMovieTime">
+          <script>
+            document.getElementById("selectedMovieTime").innerHTML = localStorage.getItem("movietime");  
+          </script>
+        </option>
       </select>
     </div>
 
@@ -136,15 +152,59 @@
     </div>
 
     <p class="text">
-      You have selected <span id="count">0</span> seats for a price of $<span
+      You have selected <span id="count">0</span> seats for a price of ₹<span
         id="price"
         >0</span
       >
     </p>
 
-  
+    <div class="d-flex justify-content-center mb-4">
+      <button type="button" id="payment" disabled class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="">
+          Proceed to payment
+      </button>
+    </div>
 
-    {{!-- SuccessLogin --}}
+
+  {{!-- Modal --}}
+{{# if loginsuccess }}
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Payment</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+{{ else }}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-danger">Login required!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  onclick="window.location.href='/login'">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+
     
     <script src="/js/seats.js"></script>
     
@@ -158,6 +218,9 @@
     $('.cinema-seats .seat').on('click', function() {
     $(this).toggleClass('active');
   });
-  </script>
+</script>
+<script>
+    document.getElementById("selectedMovieName").innerHTML = localStorage.getItem("movieName")+"(₹140)";  
+</script>
 </body>
 </html>

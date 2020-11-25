@@ -51,7 +51,7 @@
                 
                     {{#each movies}}
                         <div class="d-flex col-auto mb-3 ">
-                            <a href="/movies/{{this.movieName}}" style="text-decoration: none;">
+                            <a href="/movies/{{this.movieName}}" style="text-decoration: none;" onClick={localStorage.setItem("movieName","{{this.movieName}}")}>
                             <div class="card" style="width: 15rem;">
                                 <div class="rating">
                                     <i class="fa fa-heart red-heart" aria-hidden="true"></i> {{this.like}}%

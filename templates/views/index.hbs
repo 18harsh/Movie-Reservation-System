@@ -84,10 +84,9 @@
       <hr/>
         
       <div class="row justify-content-md-start justify-content-center">
-      
         {{#each movies}}
-            <div class="d-flex col-auto mb-3 ">
-                <a href="/movies/{{this.movieName}}" style="text-decoration: none;">
+            <div class="d-flex col-auto mb-3">
+                <a href="/movies/{{this.movieName}}" style="text-decoration: none;" onClick={localStorage.setItem("movieName","{{this.movieName}}")}>
                 <div class="card" style="width: 15rem;">
                     <div class="rating">
                         <i class="fa fa-heart red-heart" aria-hidden="true"></i> {{this.like}}%
@@ -126,7 +125,7 @@
   </div>
 </div>
 {{/if}}
-    {{!-- <script src="/js/home.js"></script> --}}
+    <script src="/js/home.js"></script>
     
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

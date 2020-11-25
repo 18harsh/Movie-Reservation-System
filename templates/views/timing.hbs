@@ -33,78 +33,79 @@
 
         <div>
             <div class="d-flex flex-row text-white text-center">
-                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#home">
-                  <span class="d-none d-sm-block text-dark" id="firstday"></span>
+                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#fday">
+                  <span class="d-none d-sm-block text-dark" id="firstday" onclick={localStorage.setItem("movieDate",document.getElementById("firstday").textContent)}></span>
                 </div>
-                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#resume">
-                  <span class="d-none d-sm-block text-dark"  id="secondday"></span>
+                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#sday">
+                  <span class="d-none d-sm-block text-dark"  id="secondday" onclick={localStorage.setItem("movieDate",document.getElementById("secondday").textContent)}></span>
                 </div>
-                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#work">
-                  <span class="d-none d-sm-block text-dark"  id="thirdday"></span>
+                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#tday">
+                  <span class="d-none d-sm-block text-dark"  id="thirdday" onclick={localStorage.setItem("movieDate",document.getElementById("thirdday").textContent)}></span>
                 </div>
-                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#contact">
-                  <span class="d-none d-sm-block text-dark"  id="fourthday"></span>
+                <div class="port-item p-4 bg-secondary border border-light" data-toggle="collapse" data-target="#ftday">
+                  <span class="d-none d-sm-block text-dark"  id="fourthday" onclick={localStorage.setItem("movieDate",document.getElementById("fourthday").textContent)}></span>
                 </div>
             </div>
         </div>
         </div>
       </div>
-    <!-- Home -->
-    <div id="home" class="collapse show">
+    <div id="fday" class="collapse show">
        <div class="card card-body bg-secondary text-white py-5">
-          <h1>Screen 1</h1>
+          <h1 id="movieNameSelected1"></h1>
+          <p>Screen 1</p>
           <hr style="height:2px;color:white;background-color:white">
           <div class="text-center">
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">9:15</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">11:00</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">14:30</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">17:15</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">19:45</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ftime1" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ftime1").textContent)}>9:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ftime2" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ftime2").textContent)}>11:00</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ftime3" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ftime3").textContent)}>14:30</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ftime4" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ftime4").textContent)}>17:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ftime5" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ftime5").textContent)}>19:45</a></div>
           </div>
         </div>
        
       </div>
 
       
-    <!-- Resume -->
-    <div id="resume" class="collapse">
+    <div id="sday" class="collapse">
       <div class="card card-body bg-secondary text-white py-5">
-          <h1>Screen 1</h1>
+          <h1 id="movieNameSelected2"></h1>
+          <p>Screen 1</p>
           <hr style="height:2px;color:white;background-color:white">
           <div class="text-center">
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">9:15</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">11:00</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">14:30</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">17:15</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">19:45</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a  id="stime1" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("stime1").textContent)}>9:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a  id="stime2" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("stime2").textContent)}>11:00</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a  id="stime3" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("stime3").textContent)}>14:30</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a  id="stime4" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("stime4").textContent)}>17:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a  id="stime5" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("stime5").textContent)}>19:45</a></div>
           </div>
         </div>
     </div>
-    <!-- work -->
-    <div id="work" class="collapse">
+    <div id="tday" class="collapse">
       <div class="card card-body bg-secondary text-white py-5">
-          <h1>Screen 1</h1>
+          <h1 id="movieNameSelected3"></h1>
+          <p>Screen 1</p>
           <hr style="height:2px;color:white;background-color:white">
           <div class="text-center">
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">9:15</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">11:00</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">14:30</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">17:15</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">19:45</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ttime1" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ttime1").textContent)}>9:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ttime2" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ttime2").textContent)}>11:00</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ttime3" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ttime3").textContent)}>14:30</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ttime4" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ttime4").textContent)}>17:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="ttime5" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("ttime5").textContent)}>19:45</a></div>
           </div>
         </div>
       </div>
-  <!-- Contact -->
-    <div id="contact" class="collapse">
+
+    <div id="ftday" class="collapse">
       <div class="card card-body bg-secondary text-white py-5">
-          <h1>Screen 1</h1>
+          <h1 id="movieNameSelected4"></h1>
+          <p>Screen 1</p>
           <hr style="height:2px;color:white;background-color:white">
           <div class="text-center">
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">9:15</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">11:00</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">14:30</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">17:15</a></div>
-            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a href="/movies/seats">19:45</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="fttime1" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("fttime1").textContent)}>9:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="fttime2" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("fttime2").textContent)}1>11:00</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="fttime3" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("fttime3").textContent)}1>14:30</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="fttime4" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("fttime4").textContent)}1>17:15</a></div>
+            <div class="d-inline-block p-2 bg-light text-dark mx-2 mb-3"><a id="fttime5" href="/movies/seats" onclick={localStorage.setItem("movietime",document.getElementById("fttime5").textContent)}1>19:45</a></div>
           </div>
         </div>
     </div>
@@ -150,19 +151,28 @@
     var fday = currentDate.getDate()
     var fmonth = currentDate.getMonth()
 
-    var sday = currentDate.getDate()+2
+    var sday = currentDate.getDate()+1
     var smonth = currentDate.getMonth()
-    
-    var tday = currentDate.getDate()+3
+  
+    var tday = currentDate.getDate()+2
     var tmonth = currentDate.getMonth()
 
-    var frday = currentDate.getDate()+4
+    var frday = currentDate.getDate()+3
     var frmonth = currentDate.getMonth()
     
     document.getElementById("firstday").innerHTML = "<b>" + fday + "<br>" + months[fmonth] + ",<br>" + myDayFunction(1) + "</b>"
     document.getElementById("secondday").innerHTML = "<b>" + sday + "<br>" + months[smonth] + ",<br>" + myDayFunction(2) + "</b>"
     document.getElementById("thirdday").innerHTML = "<b>" + tday + "<br>" + months[tmonth] + ",<br>" + myDayFunction(3) + "</b>"
     document.getElementById("fourthday").innerHTML = "<b>" + frday + "<br>" + months[frmonth] + ",<br>" + myDayFunction(4) + "</b>"
+    </script>
+
+
+    <script>
+            document.getElementById("movieNameSelected1").innerHTML = localStorage.getItem("movieName");
+            document.getElementById("movieNameSelected2").innerHTML = localStorage.getItem("movieName");
+            document.getElementById("movieNameSelected3").innerHTML = localStorage.getItem("movieName");
+            document.getElementById("movieNameSelected4").innerHTML = localStorage.getItem("movieName");
+            localStorage.setItem("movieDate",document.getElementById("firstday").textContent)
     </script>
 </body>
 </html>

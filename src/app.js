@@ -124,6 +124,8 @@ app.get('/movies/seats', async (req, res) => {
     })
 })
 
+
+// console.log(req.session.movieName);
 app.get('/movies/*', async (req, res) => {
     try {
         res.render('timing', {

@@ -7,7 +7,8 @@ const movieSelect = document.getElementById('movie');
 let ticketPrice = +movieSelect.value;
 
 const populateUI = () => {
-  const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    // console.log(selectedSeats);
 
   if (selectedSeats !== null && selectedSeats.length > 0) {
     seats.forEach((seat, index) => {
@@ -19,7 +20,8 @@ const populateUI = () => {
 
   const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
   const selectedMoviePrice = localStorage.getItem('selectedMoviePrice');
-
+  
+    
   if (selectedMovieIndex !== null) {
     movieSelect.selectedIndex = selectedMovieIndex;
   }
@@ -48,6 +50,10 @@ const updateSelectedSeatsCount = () => {
 
   count.innerText = selectedSeatsCount;
   price.innerText = selectedSeatsCount * ticketPrice;
+    document.getElementById("payment").disabled = false;
+    if (selectedSeatsCount * ticketPrice===0) {
+        document.getElementById("payment").disabled = true;
+    }
 };
 
 // Seat select event
