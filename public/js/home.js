@@ -1,2 +1,5 @@
-const Movies = require("../../src/models/movies");
+
+// function movieNameFunc(name) {
+// console.log(name)
+// }
 
