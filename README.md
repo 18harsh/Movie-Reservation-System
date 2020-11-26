@@ -8,3 +8,41 @@ https://apnashow.herokuapp.com/
 
 Sign Up Page
 ![](/Screenshots/2020-11-26.png)
+
+Sign In Page
+![](/Screenshots/2020-11-26%20(1).png)
+
+Home Page
+![](/Screenshots/2020-11-26%20(3).png)
+
+Offer Page
+![](/Screenshots/2020-11-26%20(5).png)
+
+FAQ Page
+![](/Screenshots/2020-11-26%20(7).png)
+
+Filter Page
+![](/Screenshots/2020-11-26%20(8).png)
+
+Select Movie Time
+![](/Screenshots/2020-11-26%20(4).png)
+
+Select Seats
+![](/Screenshots/2020-11-26%20(10).png)
+
+Ticket Bill
+![](/Screenshots/2020-11-26%20(11).png)
+
+Payment option
+![](/Screenshots/2020-11-26%20(12).png)
+  
+Card Detail
+![](/Screenshots/2020-11-26%20(13).png)
+
+Card Pin
+![](/Screenshots/2020-11-26%20(14).png)
+
+Successful Payment
+![](/Screenshots/2020-11-26%20(15).png)
+
+
