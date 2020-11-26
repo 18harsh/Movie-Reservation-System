@@ -75,3 +75,24 @@ movieSelect.addEventListener('change', e => {
 
   updateSelectedSeatsCount();
 });
+
+
+
+// Payment 
+// function payment(fname,lname,email) {
+//   console.log(fname,lname,email)
+  
+//   const data = {
+//     purpose : 'Movie Payment',
+//     amount : document.getElementById("payprice").textContent,
+//     buyer_name : fname +" " +lname,
+//     email,
+//     phone : '9876543210',
+//     user_id : 1,
+//     redirect_url : 'https://apnashow.herokuapp.com/',
+//     webhook : 'https://apnashow.herokuapp.com/'
+//   };
+
+
+
+// }

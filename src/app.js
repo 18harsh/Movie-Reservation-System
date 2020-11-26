@@ -8,6 +8,7 @@ const socketio = require('socket.io')
 const bodyParser = require("body-parser")
 var expressSession = require('express-session');
 
+
 // Image
 // const multer = require('multer')
 // const upload = multer({
@@ -17,6 +18,7 @@ var expressSession = require('express-session');
 
 // Routers
 const userRouter = require('./routers/user')
+const bid = require('./routers/bid')
 
 // Models
 const User = require('./models/user')
@@ -51,7 +53,8 @@ app.use(express.static(publicDirectionPath))
 app.use(expressSession({secret: 'max', saveUninitialized: false, resave: false}));
 
 // Router connection
-app.use(userRouter)
+app.use(userRouter);
+app.use(bid);
 
 
 
