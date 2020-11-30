@@ -6,59 +6,58 @@ https://apnashow.herokuapp.com/
 
 # Images
 
-# FrontEnd
+<h2>FrontEnd</h2>
 
-Sign Up Page
+<h3>Sign Up Page</h3>
 ![](/Screenshots/2020-11-26.png)
 
-Sign In Page
+<h3>Sign In Page</h3>
 ![](/Screenshots/2020-11-26%20(1).png)
 
-Home Page
+<h3>Home Page</h3>
 ![](/Screenshots/2020-11-26%20(3).png)
 
-Offer Page
+<h3>Offer Page</h3>
 ![](/Screenshots/2020-11-26%20(5).png)
 
-FAQ Page
+<h3>FAQ Page</h3>
 ![](/Screenshots/2020-11-26%20(7).png)
 
-Filter Page
+<h3>Filter Page</h3>
 ![](/Screenshots/2020-11-26%20(8).png)
 
-Select Movie Time
+<h3>Select Movie Time</h3>
 ![](/Screenshots/2020-11-26%20(4).png)
 
-Select Seats
+<h3>Select Seats</h3>
 ![](/Screenshots/2020-11-26%20(10).png)
 
-Ticket Bill
+<h3>Ticket Bill</h3>
 ![](/Screenshots/2020-11-26%20(11).png)
 
-Payment option
+<h3>Payment option</h3>
 ![](/Screenshots/2020-11-26%20(12).png)
   
-Card Detail
+<h3>Card Detail</h3>
 ![](/Screenshots/2020-11-26%20(13).png)
 
-Card Pin
+<h3>Card Pin</h3>
 ![](/Screenshots/2020-11-26%20(14).png)
 
-Successful Payment
+<h3>Successful Payment</h3>
 ![](/Screenshots/2020-11-26%20(15).png)
 
-Your Orders
+<h3>Your Orders</h3>
 ![](/Screenshots/2020-11-30.png)
 
-# BackEnd
+<h2>BackEnd</h2>
 <h3><a href="https://github.com/18harsh/Movie-Reservation-System/blob/master/src/app.js">Node Js code</a></h3>
 
+<h2>Database (MongoDB)</h2>
 
-#Database (MongoDB)
-
-Movie Data
+<h3>Movie Data</h3>
 ![](/Screenshots/2020-11-30%20(2).png)
 
-User Data
+<h3>User Data</h3>
 ![](/Screenshots/2020-11-30%20(3).png)
 
