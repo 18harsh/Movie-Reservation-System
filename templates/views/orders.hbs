@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    <title>ApnaShow</title>
+    <link rel="stylesheet" href="/css/styles.min.css">
+    <title>ApnaShow</title>
+</head>
+<style>
+    a {
+      text-decoration: none;
+    }
+</style>
+<body>
+    <script src="/js/chat.js"></script>
+    {{>header}}
+    {{>sidebar}}
+    <div role="main" class="col-md-9 col-lg-10 px-md-4 mt-3 pt-2">
+        <div class="d-flex justify-content-start">
+            <h3 class="Movie-type pt-3">Your Orders</h3>
+            <hr>
+        </div>
+        {{!-- start --}}
+            <div class="card mb-3"  style="width: 100%;">
+                <div class="card-header" style="background: rgb(196, 207, 245);">
+                    <h3 id="movieNameSelected1">
+                        <script>document.getElementById("movieNameSelected1").innerHTML = localStorage.getItem("movieName");</script>
+                    </h3>
+                </div>
+                <div class="card-body" style="background: gray; color: white;">
+                    <div class="d-flex flex-column">
+                        <div>
+                        <div class="float-left">
+                        <h5 class="card-title">Screen 1 </h5>
+                        </div>
+                        <div class="float-right">
+                            <p><span id="selectedMovieDate">
+                                <script>
+                                    document.getElementById("selectedMovieDate").innerHTML = localStorage.getItem("movieDate")+"&nbsp";  
+                                </script>
+                            </span>
+                            <span id="selectedMovieTime">
+                                <script>
+                                    document.getElementById("selectedMovieTime").innerHTML = localStorage.getItem("movietime");  
+                                </script>
+                            </span>
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                <div>
+                    <div class="float-left">
+                    <p>Tickets <span id="numberOfTickets" class="text-danger">
+                    </span></p></div>
+                    <div class="float-right">
+                    <p>
+                        <span id="ticketPrice" class="text-success"></span>
+                        <script>
+                            document.getElementById("numberOfTickets").innerHTML = "X"+localStorage.getItem("totalprice")/140;
+                            document.getElementById("ticketPrice").innerHTML = localStorage.getItem("totalprice");
+                        </script>
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {{!-- end --}}
+            
+    </div>
+</body>
+</html>

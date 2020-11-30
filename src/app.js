@@ -153,6 +153,17 @@ app.get('/movies/*', async (req, res) => {
 //     res.send()
 // })
 
+app.get('/orders', (req, res) => {
+    if (req.session.successlogin) {
+        res.render('orders', {
+                
+        })
+    } else {
+        res.status(400).send("You are not authorize")
+    }
+
+})
+
 
 app.get('/help', (req, res) => {
     res.render('help',{
