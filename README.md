@@ -6,6 +6,8 @@ https://apnashow.herokuapp.com/
 
 # Images
 
+# FrontEnd
+
 Sign Up Page
 ![](/Screenshots/2020-11-26.png)
 
@@ -45,4 +47,18 @@ Card Pin
 Successful Payment
 ![](/Screenshots/2020-11-26%20(15).png)
 
+Your Orders
+![](/Screenshots/2020-11-30.png)
+
+# BackEnd
+<h3><a href="https://github.com/18harsh/Movie-Reservation-System/blob/master/src/app.js">Node Js code</a></h3>
+
+
+#Database (MongoDB)
+
+Movie Data
+![](/Screenshots/2020-11-30%20(2).png)
+
+User Data
+![](/Screenshots/2020-11-30%20(3).png)
 
