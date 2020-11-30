@@ -8,7 +8,7 @@ https://apnashow.herokuapp.com/
 
 <h2>FrontEnd</h2>
 
-<h3>Sign Up Page</h3>
+<h3>Sign Up Page</h3><br>
 ![](/Screenshots/2020-11-26.png)
 
 <h3>Sign In Page</h3>
